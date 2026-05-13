@@ -10,6 +10,7 @@ class Post extends Model
 {
     use Sluggable;
 
+    protected $fillable = ['title'];
     public function tags()
     {
         return $this-> belongsTomany(Tag::class);
