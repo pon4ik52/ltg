@@ -202,15 +202,14 @@
               <p>Главная</p>    
             </a>
           </li>
-          <li class="nav nav-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-archive"></i>
-                <p>
-                  Категории
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="{{ route('categories.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-categories"></i>
+              <p>Категории</p>    
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+              <ul class="nav-item has-treeview">
                   <li class="nav-item">
                     <a href="{{ route('categories.index') }}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
@@ -221,6 +220,28 @@
                       <a href="{{ route('categories.create') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Новая категория</p>
+                      </a>
+                  </li>
+              </ul>
+            </li>
+          <li class="nav-item">
+            <a href="{{ route('tags.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-tag"></i>
+              <p>Тэги</p>    
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+              <ul class="nav-item has-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('tags.index') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Список тэгов</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('tags.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Новый тэг</p>
                       </a>
                   </li>
               </ul>
