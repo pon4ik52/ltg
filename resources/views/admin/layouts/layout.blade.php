@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{  asset ('assets/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{  asset ('assets/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset ('assets/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset ('assets/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
   @include('admin.alerts')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -202,13 +204,15 @@
               <p>Главная</p>    
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('categories.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-categories"></i>
-              <p>Категории</p>    
-            </a>
-          </li>
+          
           <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-archive"></i>
+                <p>
+                  Категории
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
               <ul class="nav-item has-treeview">
                   <li class="nav-item">
                     <a href="{{ route('categories.index') }}" class="nav-link">
@@ -223,14 +227,16 @@
                       </a>
                   </li>
               </ul>
-            </li>
-          <li class="nav-item">
-            <a href="{{ route('tags.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-tag"></i>
-              <p>Тэги</p>    
-            </a>
           </li>
+          
           <li class="nav-item has-treeview">
+             <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-archive"></i>
+                <p>
+                  Тэги
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
               <ul class="nav-item has-treeview">
                   <li class="nav-item">
                     <a href="{{ route('tags.index') }}" class="nav-link">
@@ -245,7 +251,32 @@
                       </a>
                   </li>
               </ul>
-            </li>
+          </li>
+            
+         <li class="nav-item has-treeview">
+             <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-archive"></i>
+                <p>
+                  Статьи
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav-item has-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('posts.index') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Список статей</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('posts.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Новая статья</p>
+                      </a>
+                  </li>
+              </ul>
+          </li> 
+            
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -280,6 +311,19 @@
 <script src="{{  asset ('assets/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{  asset ('assets/js/demo.js') }}"></script>
+
+<script src="{{  asset ('assets/js/select2.full.min.js') }}"></script>
+
+<script>
+  $(function() {
+    $('.select2').select2()
+
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+  })
+</script>
+
 @stack('scripts')
 </body>
 </html>
